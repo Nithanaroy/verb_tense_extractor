@@ -1,0 +1,23 @@
+Total English verbs 								- 6028	(Command used: cat verbs.txt | wc -l)
+Total German Verbs from English (Without Synonyms) 	- 2685	(Command used: tr -d '##########' < german_verbs.de | grep -v '^\s*$' | wc -l)
+Total German Verbs from English (With Synonyms) 	- 4687	(Command used: tr ',' '\n' < verbs_flatlist.txt | wc -l)
+
+Total German Tenses JSON files created 		- 2526		-> (1)	(Command used: ls -l german_verbs_jsons/*.json | wc -l)
+Total German Tenses HTML files downloaded 	- 3443		-> (2)	(Command used: ls -l german_verbs_htmls/*.html | wc -l)
+Total German verbs not found on Verbix 		- 917		-> (3) = (2) - (1)	(Command used: find german_verbs_htmls/*.html -type f -size -20000c | wc -l)
+
+Some Facts
+-----------
+=> (1) is the number of German words for which tense information is found
+=> (3) Command finds all German Tenses HTML files whose size is < 20,000 bytes. These are the files which the error page "Verb Not Found" on Verbix
+=> Only 44.5% of English verbs are found in German (2685 / 6028)
+=> Only 53.9% of German verbs have tense information (2526 / 4687)
+
+Words that failed
+-------------------
+u'artikulieren'
+IOError: ('http protocol error', 0, 'got a bad status line', None)
+
+
+u'begrüssen'
+IOError: ('http protocol error', 0, 'got a bad status line', None)
