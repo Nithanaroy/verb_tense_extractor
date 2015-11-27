@@ -33,3 +33,8 @@ Follow these steps to tweek the repo and make it for whatever translation langua
 - The `main` function has the calls to each step
 
 Each step above is cached into files to prevent network calls in future for next steps.
+
+## Challenges Faced
+While writing this code, these are some challenges I encountered
+- encoding URLs while making GET requests for extracting German tenses
+- encoding German words for generating a reversible file name from the word
